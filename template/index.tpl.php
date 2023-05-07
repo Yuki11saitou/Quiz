@@ -10,7 +10,7 @@
 <body>
     <div id="main">
         <h1>Quiz!</h1>
-    
+
         <h2>問題一覧</h2>
         <ul>
             <!-- $questionsの出どころはindex.phpで全(行分の)データが、$questionには1行のデータが入っている -->

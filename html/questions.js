@@ -1,19 +1,21 @@
 // 解答の選択肢一覧を取得
-//olの中のliを指定するときは以下の書き方でOK。li等、対象が複数あるときはquerySelectorAllメソッド使用。
-//ただし、1つ目のliずつしかanswersListに入らないので、各々処理するにはforEachで処理させないとダメ。
+// olの中のliを指定するときは以下の書き方でOK。li等、対象が複数あるときはquerySelectorAllメソッド使用。
 const answersList = document.querySelectorAll('ol.answers li');
+
 // クリックされたときの処理を仕込む
 answersList.forEach(li => li.addEventListener('click', checkClickedAnswer));
 
 
-//eventを第一引数にすることで、clickというイベントが発生した瞬間に起こる処理を「event.〇〇」で記述できる
+// eventを第一引数にすることで、clickというイベントが発生した瞬間に起こる処理を「event.〇〇」で記述できる
 function checkClickedAnswer(event) {
-    // addEventListenerによって反応した要素(この実装ではli要素) ＊処理元を辿るようなイメージ
+
+    // addEventListenerによって反応した要素(この実装ではli要素)
     const clickedAnswerElement = event.currentTarget;
+
     // 選択した答え(A,B,C,D) *「.dataset.answer」はhtmlで指定した「data-answer」をJS用に読み替えたもの
-    //dataset は HTMLElement インターフェイスの読み取り専用プロパティで、要素に設定されたすべてのカスタムデータ属性 (data-*) への読み取り/書き込みアクセスを提供する。
+    // dataset は HTMLElement インターフェイスの読み取り専用プロパティで、要素に設定されたすべてのカスタムデータ属性 (data-*) への読み取り/書き込みアクセスを提供する。
     const selectedAnswer = clickedAnswerElement.dataset.answer;
-    //⇒回答を収集
+    //⇒回答を収集(A,B,C,D)
 
     // 親要素のolから、data-idの値を取得 *「dataset.id」はhtmlで指定した「data-id」をJS用に読み替えたもの
     // 親要素の指定には closest('ol.answers') のように書く
@@ -36,16 +38,10 @@ function checkClickedAnswer(event) {
     xhr.send(formData);
     //⇒POSTで、宛先'answer.php'にデータを送信
 
-    // loadendはリクエストが完了したときにイベントが発生する = レスポンスを受け取る
-    //第二引数に関数を直接書くことで、別途関数の定義をする手間が省ける(こういう書き方もある)
+    // loadendはリクエストが完了したときにイベントが発生する
     xhr.addEventListener('loadend', function(event){
-        //下のように書くことで、xhr.の後に補完が効くようになる(上で「const xhr = new XMLHttpRequest();」としているため、
-        // XMLHttpRequest のメソッド等が入力時の選択肢として表示されるようになる)
-        /** @type {XMLHttpRequest} */   
-
-        // addEventListenerによってイベント検知した対象(XMLHttpRequest('loadend'イベントと紐づけられている))のオブジェクトを取得
-        //これは(多分)左辺がxhrでなくても成り立つはず。上までの流れで(下から辿ると)event.currentTarget=xhr=XMLHttpRequestとなっているはずなのでevent.currentTargetを別のconstに代入してもXMLHttpRequestオブジェクトを取得していることには変わりないはず。
-        const xhr = event.currentTarget;   
+        //イベント発生元のオブジェクト(インスタンス)である「XMLHttpRequest()オブジェクト」がevent.currentTargetになるため、xhrに再代入。
+        const xhr = event.currentTarget;
 
         //リクエストが成功したかステータスコードで確認
         //ステータスコードは、ブラウザから 開発者ツール>ネットワーク で参照可能
@@ -66,7 +62,6 @@ function checkClickedAnswer(event) {
             //エラー
             alert('Error:回答データの取得に失敗しました');
         }
-
     });
 }
 

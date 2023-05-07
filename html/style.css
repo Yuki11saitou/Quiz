@@ -1,7 +1,7 @@
-/* 単位について:1px = 1ドット分(ディスプレイの一つの点の分) ， 1em = 親要素のフォントサイズと同じ(”1”とする) = 通常16px */
+/* 単位について:1px = 1ドット分(ディスプレイの一つの点の分) ，1em = 親要素のフォントサイズと同じ(”1”とする) = 通常16px */
 
 /*
- * Webフォントの読み込み(@import は CSS のアットルール)により、デバイス(のローカルフォント)に使用したいフォントが入っていなかった場合にもデバイスに関係なくフォント指定が可能に。
+ * Webフォントの読み込み(@import は CSS のアットルール)により、デバイス(のローカルフォント)に使用したいフォントが入っていなかった場合にもデバイスに関係なくフォント指定が可能。
  * Google fontのURL  https://fonts.google.com/specimen/Kiwi+Maru?subset=japanese
  * 「@import」及び「font-family」のコードが必要。
  */
@@ -19,16 +19,15 @@ h1, h2, h3 {
 
 h2 {
     /* 線を描画 (solid:1本線, #1e366a: 16進数カラーコード, 1px: 線の太さ */
-    border-bottom: solid #1e366a 1px; 
+    border-bottom: solid #1e366a 1px;
 }
 
-/* 下記は不要コード */
-/* ul { */
-    /* 要素の内側（境界線からコンテンツ本体の間)の領域。左のみを調整 */
-    /* padding-left: 0.5em; */
-/* }  */
+/* 問題一覧の項目を編集 */
+ul li {
+    padding: 0.5em;
+}
 
-/* 
+/*
  * classは複数の要素に指定することができる(class="answers"は複数のタグに指定できる)
  * classの場合、親要素からの指定は「.」で繋ぐ
  * ※要素名は省略して.sectionと書くこともできる(その場合、class指定されている要素すべてにスタイルが適用される)
@@ -43,19 +42,11 @@ ol.answers {
     padding: 0 1em;
 }
 
-/* 下記は不要コード */
-/* <ul>の中にある<li>タグにスタイルを適用 */
-/* ul li, ol li { */
-    /* 2つ指定しているときは左から 上下 左右 の順番で値が指定される(※em指定することでブラウザの拡大、縮小で1emが変化する) */
-    /* padding: 1em; */
-    /* list-style-position: inside; */
-/* } */
-
 /* <ol>の中にある<li>タグにスタイルを適用 */
 ol li {
     /* liの「marker」(デフォルトは1,2,3,...で、今回は上で「upper-alpha」としたのでA,B,C,...)をpaddingの内側に入れるのを下記で指示。デフォルトでは、paddingの外側に表示される */
     padding: 1em;
-    list-style-position: inside; 
+    list-style-position: inside;
 }
 
 /* リストにマウスをおいたときだけスタイルが変わる */
@@ -63,7 +54,7 @@ ol.answers li:hover {
     border: solid #1e366a 0.1em;
     padding: 0.9em;
     /* ol liで「list-style-position: inside;」としたのはここでmarkerも着色されるため  */
-    background-color: #e5ecfc;  
+    background-color: #e5ecfc;
     /* マウスのポインタを変化させる */
     cursor: pointer;
 }
@@ -80,8 +71,7 @@ span#correct-answer {
 
 div#main {
     /* 要素の内側（境界線からコンテンツ本体の間)の領域を指定(上下, 左右)
-     * 余計なdivタグ等で別途指定が無ければ、これが適用される
-     */
+     * 余計なdivタグ等で別途指定が無ければ、これが適用される */
     padding: 0 1.5em;
 }
 
@@ -91,7 +81,7 @@ div.section {
 }
 
 div#section-correct-answer {
-    /* 表示しない場合noneで指定 
+    /* 表示しない場合noneで指定
      * 表示させる場合はblockで指定。divタグはblock要素と呼ばれる(ex.インライン要素)
      */
     display: none;
