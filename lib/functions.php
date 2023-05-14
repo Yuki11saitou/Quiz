@@ -122,4 +122,17 @@ function escape($data, $nl2br = false) {
 }
 
 
+// 体感寿命を算出する
+function calculateLifeSpan($age){
+  // 生まれてから現在の年齢($age)までの体感時間[年] (実経過時間は$age)
+  $experienceTime = log($age+1);
+  // 80歳まで生きると仮定
+  $lifeSpan = 80;
+  // 生まれてから死ぬまでの体感時間[年]
+  $experienceLifeSpan = log($lifeSpan+1);
+  // 残りの体感寿命[%]を出力
+  $remainingExperienceLifeSpan = ($experienceLifeSpan-$experienceTime)/($experienceLifeSpan);
+  echo round($remainingExperienceLifeSpan*100,2);
+}
+
 ; ?>

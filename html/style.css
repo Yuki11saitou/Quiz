@@ -27,6 +27,49 @@ ul li {
     padding: 0.5em;
 }
 
+/* 画像を編集 */
+img.sunadokei {
+    width: 240px;
+    height: 200px;
+}
+
+/* 年齢回答フォームを編集 */
+.ask-age {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input {
+    margin-left: 50px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    padding: 5px;
+    text-align: center;
+    width: 60px;
+    font-size: 14px;
+}
+
+input[type="submit"] {
+    display: inline-block;
+    width: 150px;
+    height: 38px;
+    line-height: 38px;
+    padding: 0 10px;
+    border-radius: 20px;
+    border-style: none;
+    color: white;
+    background-color: #42c7c1;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+  }
+
+.life-span {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 /*
  * classは複数の要素に指定することができる(class="answers"は複数のタグに指定できる)
  * classの場合、親要素からの指定は「.」で繋ぐ
