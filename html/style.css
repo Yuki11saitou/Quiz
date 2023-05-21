@@ -9,6 +9,7 @@
 body {
     /* 左から優先して見つかったフォントを適用する(Webフォント) */
     font-family: 'M PLUS Rounded 1c', sans-serif;
+    background: rgba(252, 252, 252, 0.909);
 }
 
 /* 複数のタグ名をカンマ区切りで指定すると複数を一気に指定できる */
@@ -65,6 +66,8 @@ input[type="submit"] {
   }
 
 .life-span {
+    font-weight: bold;
+    color: orangered;
     margin-left: 40px;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -129,3 +132,36 @@ div#section-correct-answer {
      */
     display: none;
 }
+
+/* 学習歴(history.html)へのリンクに対するCSS */
+.history-link {
+    content: "";
+    display: block;
+    height: 10em;
+}
+
+/* 学習歴(history.html)へのリンクに対するCSS */
+.blinking-text,.history-link {
+    animation: blink 1s infinite;
+    color:rgb(247, 19, 114) ;
+}
+@keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+}
+
+/* 学習歴(history.html)での背景 */
+.full {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background: url(../lib/photo/photo.jpg)
+    center / cover;
+  }

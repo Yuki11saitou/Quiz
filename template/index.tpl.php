@@ -23,7 +23,7 @@
         <form method="post" action="./calculate.php">
             <h2>体感寿命シミュレーション</h2>
             <img src="https://2.bp.blogspot.com/-ySXp7IOKvbA/U-8Fwdt8XsI/AAAAAAAAkxs/ax9ZIk6CYOk/s800/sunadokei.png" class='sunadokei'>
-            <p class="ask-age">あなたの年齢は？(80歳まで生きると仮定します。)</p>
+            <p class="ask-age">あなたの年齢は？(80歳まで生きると仮定します)</p>
             <input type="text" value="0" name="age">
             <span>歳</span>
 
@@ -31,6 +31,9 @@
                 <input type="submit" value="体感寿命を計算する" >
             </div>
         </form>
+
+        <h2></h2>
+        <a href="../html/history.html" class="history-link">★★★私の秘密(プログラミング学習歴)をご覧ください！★★★</a>
 
     </div>
 </body>
