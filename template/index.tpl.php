@@ -33,7 +33,7 @@
         </form>
 
         <h2></h2>
-        <a href="../html/history.html" class="history-link">★★★私の秘密(プログラミング学習歴)をご覧ください！★★★</a>
+        <a href="./history.html" class="history-link">★★★私の秘密(プログラミング学習歴)をご覧ください！★★★</a>
 
     </div>
 </body>
